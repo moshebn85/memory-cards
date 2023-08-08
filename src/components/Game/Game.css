@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+
+:root {
+  --color-main: rgba(0, 0, 0, 0.7);
+  --color-secondary: #3f51b5;
+}
+
+/* App */
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Board */
+
+.board {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.board__bonus-card {
+  position: absolute;
+  left: 0;
+  transform: translateX(-110px);
+  top: 0;
+}
+
+.board__bonus-card .board__bonus-card__title {
+  margin-top: 0;
+  font-family: "Bungee", cursive;
+  font-weight: normal;
+}
+
+/* Card */
+
+.card {
+  position: relative;
+  perspective: 500px;
+  cursor: pointer;
+}
+
+.card .card__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s;
+  transform-style: preserve-3d;
+}
+
+.card.flip .card__content {
+  transform: rotateY(180deg);
+  transition: transform 0.2s;
+}
+
+.card:not(.flip):active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.card .card__front-face,
+.card .card__back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.board.showCards .card .card__front-face,
+.board.showCards .card .card__back-face {
+  backface-visibility: visible;
+}
+
+.card .card__front-face {
+  transform: rotateY(180deg);
+}
+
+.card .card__front-face img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card .card__back-face,
+.board.showCards .card:not(.flip) .card__front-face {
+  background-color: #d9d9e6;
+  filter: grayscale(1);
+  background-blend-mode: soft-light;
+}
+
+.board.showCards .card .card__back-face {
+  background-color: transparent;
+  background-image: none !important;
+}
+
+/* Time and Count flip */
+
+.time,
+.count-flips {
+  font-family: "Abel", sans-serif;
+}
+
+.time {
+  font-size: 50px;
+}
+
+.count-flips {
+  font-size: 26px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.count-flips .count {
+  font-weight: bold;
+}
+
+/* Header */
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header .header__title {
+  font-family: "Bungee", cursive;
+  color: var(--color-secondary);
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Footer */
+
+.footer {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  text-align: right;
+  color: var(--color-main);
+}
+
+/* Level */
+
+button.btn-level {
+  font-family: "Abel", sans-serif;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 0 0.35rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--color-main);
+  cursor: pointer;
+}
+
+button.btn-level.selected {
+  color: #3e51b5;
+  background-color: #cdd5ff;
+  border-color: transparent;
+  font-weight: bold;
+}
+
+button.btn-level:active,
+button.btn-level:focus {
+  outline: none;
+}
+
+button.btn-level:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.form-save-data {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+input.input-text {
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: rgb(255 255 255 / 50%);
+  color: #333;
+  font-size: 16px;
+  min-width: 300px;
+}
+
+input.input-text:not(.valid) {
+  border: 1px solid red;
+}
+
+.game-modal {
+  color: #fff;
+}
+
+.game-modal__title {
+  font-family: "Bungee", cursive;
+  color: #fff;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.game-modal__resume {
+  font-size: 16px;
+  line-height: 1.5rem;
+  background-color: #fff;
+  color: #333;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.game-modal__resume__title {
+  font-family: "Bungee", cursive;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.game-modal__resume__bonus-card {
+  position: absolute;
+  left: -100px;
+  top: 4px;
+}
+
+.game-bonus-card__image {
+  width: 100px;
+  height: 100px;
+  animation: border 1s linear infinite;
+  border-radius: 4px;
+}
+
+.game-modal__btn {
+  font-size: 2rem !important;
+  margin-top: 4rem !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@keyframes border {
+  0% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  50% {
+    box-shadow: 0 0 40px 0 #3f51b5;
+  }
+  100% {
+    box-shadow: 0 0 80px 0 transparent;
+  }
+}
