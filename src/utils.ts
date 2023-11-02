@@ -149,7 +149,7 @@ export function getCardsNew(totalCards: number) {
 
   const cards = GAME_TOPICS['professions'];
   cards.forEach(function(value: string) {
-    names.push(`${value}-small-bw.jpg`);
+    names.push(`${value}`);
   });
 
   const selectedSet = names.slice(0, totalCards);

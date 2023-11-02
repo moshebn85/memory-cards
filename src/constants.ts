@@ -40,7 +40,6 @@ export const GAME_TOPICS = {
         "Fashion-Designer",
         "Carpenter",
         "Athletic-Trainer"
-    ],
-    "dummy":[]
+    ]
 };
 

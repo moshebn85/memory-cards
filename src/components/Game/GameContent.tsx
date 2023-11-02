@@ -57,10 +57,17 @@ export const GameContent: React.FC<IGameContentProps> = ({
   const onCardClick = (
     card: FormattedCard,
     secretKey: string,
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    id: string
   ) => {
     setLock(true);
     setStartTimer(true);
+    const sound = document.getElementById(`audio-${id}`);
+    console.log("TEST0:",id);
+    console.log("TEST:",sound);
+    console.log("TEST2:",sound instanceof HTMLAudioElement);
+    if(sound && sound instanceof HTMLAudioElement)
+      sound.play();
 
     if (!firstCard) {
       const firstCard = {
@@ -201,7 +208,7 @@ export const GameContent: React.FC<IGameContentProps> = ({
               onClick={
                 firstCard?.id === id || matched || lock
                   ? () => {}
-                  : (event) => onCardClick(cards[key], secretKey, event)
+                  : (event) => onCardClick(cards[key], secretKey, event, id)
               }
               style={{ width: size, height: size }}
             >
@@ -210,7 +217,7 @@ export const GameContent: React.FC<IGameContentProps> = ({
                   <div
                     className="card__front-face"
                     style={{
-                      backgroundImage: `url(${decrypt(id, secretKey)})`,
+                      backgroundImage: `url(${`${decrypt(id, secretKey)}-small-bw.jpg`})`,
                       backgroundSize: size,
                     }}
                   />
@@ -223,6 +230,7 @@ export const GameContent: React.FC<IGameContentProps> = ({
                   }}
                 />
               </div>
+              <audio id={`audio-${id}`} src={`${decrypt(id, secretKey)}.mp3`} preload="auto"></audio>
             </div>
           );
         })}
