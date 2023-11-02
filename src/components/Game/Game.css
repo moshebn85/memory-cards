@@ -217,6 +217,7 @@ input.input-text:not(.valid) {
   border-radius: 8px;
   margin-bottom: 2rem;
   position: relative;
+  direction: rtl;
 }
 
 .game-modal__resume__title {

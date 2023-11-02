@@ -41,61 +41,6 @@ export const FinishModalContent: React.FC<IFinishModalContentProps> = ({
             })}
           </strong>
         </div>
-
-        <div>
-          <strong>
-            {userData.bonus
-              ? "You found the bonus card!"
-              : "You didn't find the bonus card!"}
-          </strong>
-        </div>
-
-        <form
-          className="form-save-data"
-          onSubmit={(event) => {
-            event.preventDefault();
-
-            const { timer, flipCount, bonus } = userData;
-
-          
-          }}
-        >
-          <input
-            className={classNames("input-text", { valid: validName })}
-            type="text"
-            value={name}
-            onChange={({ target: { value } }) => setName(value)}
-            placeholder="Insert your name to save on ranking"
-            required
-            maxLength={30}
-          />
-
-          <button className="btn-level selected" type="submit">
-            save
-          </button>
-        </form>
-      </ResumeBox>
-
-      <ResumeBox title="More about ti">
-        If you're a developer, come check out{" "}
-        <a
-          href="https://github.com/interaminense/memory-game-js"
-          target="_blank"
-          rel="noreferrer"
-        >
-          the open source game on Github
-        </a>{" "}
-        and give the repository a star! I'm always looking for developers to
-        help improve and evolve it. Join us and be part of the community of
-        development!
-        <br />
-        <br />
-        <div>
-          Developed by{" "}
-          <a href="https://interaminense.dev/" target="_blank" rel="noreferrer">
-            @interaminense
-          </a>
-        </div>
       </ResumeBox>
 
       <div className="text-center">

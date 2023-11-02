@@ -1,6 +1,5 @@
 import { RankingBuilder } from "ranking-builder";
 import { Game, Level } from "./components/Game/Game";
-import { Hackers } from "./components/Hackers/Hackers";
 import { Ranking } from "./components/Ranking/Ranking";
 import { getSelectedLevel } from "./utils";
 
@@ -28,7 +27,6 @@ function App() {
 
   return (
     <div className="App">
-      <Hackers />
       <Game level={level}  />
 
     </div>

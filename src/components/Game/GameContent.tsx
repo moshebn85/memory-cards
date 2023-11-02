@@ -1,7 +1,7 @@
 import confetti from "canvas-confetti";
 import classNames from "classnames";
 import { useState, useEffect, useRef } from "react";
-import { decrypt, getSecretKey, secondsToTimeFormat } from "../../utils";
+import {decrypt, getSecretKey, secondsToTimeFormat, setButtonName} from "../../utils";
 import { BonusCard } from "../BonusCard/BonusCard";
 import { FormattedCard, levels, TLevel, UserData } from "./Game";
 
@@ -167,7 +167,7 @@ export const GameContent: React.FC<IGameContentProps> = ({
   return (
     <>
       <div className="header">
-        <h1 className="header__title">Memory Game</h1>
+        <h1 dir="rtl" className="header__title"> משחק הזיכרון שלי</h1>
 
         <div className="level">
           <div className="level__content">
@@ -179,7 +179,8 @@ export const GameContent: React.FC<IGameContentProps> = ({
                   selected: value === key,
                 })}
               >
-                {key}
+                {setButtonName(key)}
+
               </button>
             ))}
           </div>
@@ -238,7 +239,7 @@ export const GameContent: React.FC<IGameContentProps> = ({
 
       <div className="footer">
         <div className="count-flips">
-          flip count <span className="count">{flipCount}</span>
+          <span className="count">{flipCount}</span> מספר חשיפות
         </div>
         <div className="time">{secondsToTimeFormat(timer)}</div>
       </div>

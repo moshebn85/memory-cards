@@ -201,3 +201,14 @@ export function decrypt(encryptedStr: string, key: string) {
 export function getSecretKey(index: number) {
   return `${process.env.REACT_APP_CARD_PATH_SECRET_KEY}-${index + 1}`;
 }
+
+export function setButtonName(engName:string) {
+  switch (engName) {
+    case "EASY":
+      return "קל";
+    case "NORMAL":
+      return "בינוני";
+    case "HARD":
+      return "קשה";
+  }
+}

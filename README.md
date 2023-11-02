@@ -1,2 +1,2 @@
-# memory-cards
-Learn english from cards with their textual names and audio speech
+# משחק זכרון ללימוד אנגלית
+משחק זכרון לילדים ללימוד אוצר מילים באנגלית ללא מטרת רווח. תהנו :)

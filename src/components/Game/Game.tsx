@@ -129,7 +129,7 @@ export function Game({
 
       {showModal && (
         <Modal className="game-modal">
-          <h1 className="game-modal__title">Memory Game</h1>
+          <h1 dir="rtl" className="game-modal__title">משחק הזיכרון שלי</h1>
 
           {view === "activeCheat" && <ActiveCheatModalContent />}
 
