@@ -1,8 +1,7 @@
 import { Card, FormattedCard, Level } from "./components/Game/Game";
 import { useEffect, useState } from "react";
-import { CARDS_PATH, MAX_CARDS, EXTRA_POINT, CHEAT_KEYWORD } from "./constants";
+import { CARDS_PATH, MAX_CARDS, EXTRA_POINT, CHEAT_KEYWORD, GAME_TOPICS } from "./constants";
 import CryptoJS from "crypto-js";
-import fs from "fs";
 
 export function shuffle<T>(array: T[]): T[] {
   let currentIndex = array.length;
@@ -134,6 +133,31 @@ function randomArray(total: number): number[] {
 
 export function getPath(number: number) {
   return `${CARDS_PATH}/image${number}.webp`;
+}
+
+export function getRandomContent() {
+  const names: string[] = Object.keys(GAME_TOPICS);
+  const topic = names[Math.floor(Math.random() * names.length)];
+  
+  return topic;
+  }
+
+export function getCardsNew(totalCards: number) {
+  const names: string[] = [];
+  const topic = getRandomContent();
+  const dirPath = `${CARDS_PATH}/${topic}/`;
+
+  const cards = GAME_TOPICS['professions'];
+  cards.forEach(function(value: string) {
+    names.push(value);
+  });
+
+  const selectedSet = names.slice(0, totalCards);
+  return selectedSet.map((selectedCard) => ({
+      path: dirPath+selectedCard,
+      matched: false,
+      flipped: false,
+    }));
 }
 
 export function getCards(totalCards: number) {

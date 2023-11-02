@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 
 import {
   getCards,
+  getCardsNew,
   getPath,
   mapAssetsByName,
   randomNumber,
@@ -58,21 +59,21 @@ type TLevels = {
 
 export const levels: TLevels = {
   [Level.Easy]: {
-    cards: getCards(6),
+    cards: getCardsNew(6),
     columns: 4,
     size: 200,
     total: 6,
     value: Level.Easy,
   },
   [Level.Normal]: {
-    cards: getCards(10),
+    cards: getCardsNew(10),
     columns: 5,
     size: 150,
     total: 10,
     value: Level.Normal,
   },
   [Level.Hard]: {
-    cards: getCards(18),
+    cards: getCardsNew(18),
     columns: 6,
     size: 100,
     total: 18,
