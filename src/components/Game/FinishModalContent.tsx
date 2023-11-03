@@ -22,17 +22,17 @@ export const FinishModalContent: React.FC<IFinishModalContentProps> = ({
 
   return (
     <>
-      <ResumeBox title="Game Over">
+      <ResumeBox title="המשחק נגמר">
         <div>
-          Your time: <strong>{secondsToTimeFormat(userData.timer)}</strong>
+          זמן משחק: <strong>{secondsToTimeFormat(userData.timer)}</strong>
         </div>
 
-        <div>
-          Flips: <strong>{userData.flipCount}</strong>
+        <div dir="rtl">
+          היפוכי קפלים: <strong>{userData.flipCount}</strong>
         </div>
 
-        <div>
-          Your score:{" "}
+        <div dir="rtl">
+          הניקוד שלך:{" "}
           <strong>
             {calculateScore({
               timeTaken: userData.timer,
@@ -43,12 +43,12 @@ export const FinishModalContent: React.FC<IFinishModalContentProps> = ({
         </div>
       </ResumeBox>
 
-      <div className="text-center">
+      <div dir="rtl" className="text-center">
         <button
           className="game-modal__btn btn-level selected"
           onClick={() => window.location.reload()}
         >
-          Try again!
+          נסה שוב!
         </button>
       </div>
     </>

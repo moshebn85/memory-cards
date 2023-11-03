@@ -63,9 +63,6 @@ export const GameContent: React.FC<IGameContentProps> = ({
     setLock(true);
     setStartTimer(true);
     const sound = document.getElementById(`audio-${id}`);
-    console.log("TEST0:",id);
-    console.log("TEST:",sound);
-    console.log("TEST2:",sound instanceof HTMLAudioElement);
     if(sound && sound instanceof HTMLAudioElement)
       sound.play();
 

@@ -40,6 +40,7 @@ export const GAME_TOPICS = {
         "Fashion-Designer",
         "Carpenter",
         "Athletic-Trainer"
-    ]
+    ],
+    "furnitures":["Bed","Sofa","Chair","Table","Desk","Shelf","Cabinet","Dresser","Mirror","Lamp","Rug","Coffee-Table","Nightstand","Wardrobe","Bookshelf","Couch","TV-Stand","Stool","Dining-Table","Rocking-Chair","Bunk-Bed","Armchair","Side-Table","Vanity-Table","Storage-Chest","Chest-of-Drawers","Dining-Chair","Fridge","Oven","Microwave","Dining-Set"]
 };
 

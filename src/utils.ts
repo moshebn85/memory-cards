@@ -147,7 +147,8 @@ export function getCardsNew(totalCards: number) {
   const topic = getRandomContent();
   const dirPath = `${CARDS_PATH}/${topic}/`;
 
-  const cards = GAME_TOPICS['professions'];
+  // @ts-ignore
+  const cards = GAME_TOPICS[topic];
   cards.forEach(function(value: string) {
     names.push(`${value}`);
   });
