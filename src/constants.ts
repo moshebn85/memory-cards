@@ -41,6 +41,8 @@ export const GAME_TOPICS = {
         "Carpenter",
         "Athletic-Trainer"
     ],
-    "furnitures":["Bed","Sofa","Chair","Table","Desk","Shelf","Cabinet","Dresser","Mirror","Lamp","Rug","Coffee-Table","Nightstand","Wardrobe","Bookshelf","Couch","TV-Stand","Stool","Dining-Table","Rocking-Chair","Bunk-Bed","Armchair","Side-Table","Vanity-Table","Storage-Chest","Chest-of-Drawers","Dining-Chair","Fridge","Oven","Microwave","Dining-Set"]
+    "furnitures": ["Bed","Sofa","Chair","Table","Desk","Shelf","Cabinet","Dresser","Mirror","Lamp","Rug","Coffee-Table","Nightstand","Wardrobe","Bookshelf","Couch","TV-Stand","Stool","Dining-Table","Rocking-Chair","Bunk-Bed","Armchair","Side-Table","Vanity-Table","Storage-Chest","Chest-of-Drawers","Dining-Chair","Fridge","Oven","Microwave","Dining-Set"],
+    "foods": ["Apple","Banana","Orange","Strawberry","Grapes","Mango","Pineapple","Lemon","Peach","Pear","Cherry","Kiwi","Blueberry","Raspberry","Avocado","Carrot","Broccoli","Tomato","Cucumber","Lettuce","Potato","Onion","Garlic","Spinach","Pepper","Mushroom","Corn","Zucchini","Eggplant","Cabbage","Cauliflower","Cake","Cookie","Ice-Cream","Brownie","Cupcake","Donut","Pie","Pudding","Gelato","Mousse","Cheesecake","Churro","Candy","Macaron","Sorbet","Fruit-Salad"]
+
 };
 
