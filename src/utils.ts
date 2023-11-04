@@ -153,12 +153,21 @@ export function getCardsNew(totalCards: number) {
     names.push(`${value}`);
   });
 
-  const selectedSet = names.slice(0, totalCards);
+  const selectedSet = shuffleArray(names).slice(0, totalCards);
   return selectedSet.map((selectedCard) => ({
       path: dirPath+selectedCard,
       matched: false,
       flipped: false,
     }));
+}
+
+export function shuffleArray(array:String[]) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    // Swap array[i] and array[j]
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 export function getCards(totalCards: number) {
